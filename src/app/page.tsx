@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import styles from "./page.module.css";
-const BACKEND_API_URL="https://code-review-backend-pj0v.onrender.com"
+const BACKEND_API_URL=process.env.BACKEND_API_URL
 export default function Home() {
   const [code, setCode] = useState(`function calculateTotal(items) {
   let total = 0;
