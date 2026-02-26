@@ -3,9 +3,6 @@
 import { useState } from "react";
 import styles from "./page.module.css";
 
-const BACKEND_URL =
-  process.env.REACT_APP_BACKEND_URL 
-
 export default function Home() {
   const [code, setCode] = useState(`function calculateTotal(items) {
   let total = 0;
@@ -23,7 +20,7 @@ export default function Home() {
     setLoading(true);
     setError("");
     try {
-      const response = await fetch(`${BACKEND_URL}/review`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/review`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ code }),
